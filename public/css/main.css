@@ -1,0 +1,18 @@
+body {
+    padding: 50px 25px;
+}
+.site-link {
+    background: #222;
+    width: 100%;
+    height: 300px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+.site-link:hover {
+    color: #903737;
+    text-decoration: none;
+    background: #111;
+}
