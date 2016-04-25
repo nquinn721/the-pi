@@ -8,11 +8,11 @@ try{
 
 
  <?php
- if ($handle = opendir('.')) {
+ if ($handle = opendir('./repos')) {
 
 	while (false !== ($entry = readdir($handle))) {
 	     if(strpos($entry, '.') === false && $entry !== 'public' && $entry !== 'lib'){
-         	echo "<div class='col-md-6 site-container'><a href='$entry' class='site-link'>$entry</a></div>";
+         	echo "<div class='col-md-6 site-container'><a href='repos/$entry' class='site-link'>$entry</a></div>";
          }
 	}
 
