@@ -1,3 +1,4 @@
+<?php include 'lib/globals.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
 <?php include 'lib/nav.php';?>
 <div class="container">
 	<?php
-	if($_SERVER['HTTP_HOST'] === 'localhost')
+	if(!$server)
 		include 'development.php';
 	else include 'production.php';
 	?>
