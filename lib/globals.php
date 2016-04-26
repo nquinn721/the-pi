@@ -1,4 +1,6 @@
 <?php
-$server = !$_SERVER['HTTP_HOST'] === 'localhost';
+if($_SERVER['HTTP_HOST'] === 'localhost')
+	$server = false;
+else $server = true;
 echo $server;
 ?>
