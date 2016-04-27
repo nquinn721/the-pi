@@ -14,7 +14,28 @@
 	if(!$server)
 		include 'development.php';
 	else include 'production.php';
-	?>
+
+ if ($handle = opendir('./repos')) {
+
+	while (false !== ($entry = readdir($handle))) {
+	     if(strpos($entry, '.') === false):?>
+         	<div class='col-md-6 site-container repo-list' >
+         		<a href='repos/<?php echo $entry;?>' class='site-link' >
+	         		<img class='img' src="img/repos/<?php echo $entry;?>.png" alt="">
+	     			<span>
+	     				<?php echo $entry;?>
+	     				<div class="small-text">Created by: Isidro Figueroa</div>
+	     			</span>
+         		</a>
+         	</div>
+
+        <?php endif;
+	}
+
+
+	closedir($handle);
+}
+?>
 </div>
 <?php include 'includes/scripts.php';?>
 </body>
