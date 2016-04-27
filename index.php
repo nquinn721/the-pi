@@ -18,13 +18,20 @@
  if ($handle = opendir('./repos')) {
 
 	while (false !== ($entry = readdir($handle))) {
-	     if(strpos($entry, '.') === false):?>
+	     if(strpos($entry, '.') === false):
+	     	$string = @file_get_contents("repos/$entry/package.json");
+			$json = json_decode($string, true);
+			if(isset($json))
+				$name = $json['name'];
+			else $name = 'Unknown';
+			
+	     	?>
          	<div class='col-md-6 site-container repo-list' >
          		<a href='repos/<?php echo $entry;?>' class='site-link' >
 	         		<img class='img' src="img/repos/<?php echo $entry;?>.png" alt="">
 	     			<span>
 	     				<?php echo $entry;?>
-	     				<div class="small-text">Created by: Isidro Figueroa</div>
+	     				<div class="small-text">Created by: <?php echo $name?></div>
 	     			</span>
          		</a>
          	</div>
