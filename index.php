@@ -1,15 +1,14 @@
-<?php include 'lib/globals.php'; ?>
+<?php include 'includes/globals.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>CollabKings</title>
-	<link rel="stylesheet" href="public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="public/css/lib/bootstrap.min.css">
 	<link rel="stylesheet" href="public/css/main.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
-<?php include 'lib/nav.php';?>
+<?php include 'includes/nav.php';?>
 <div class="container">
 	<?php
 	if(!$server)
@@ -17,6 +16,6 @@
 	else include 'production.php';
 	?>
 </div>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<?php include 'includes/scripts.php';?>
 </body>
 </html>

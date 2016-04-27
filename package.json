@@ -1,5 +1,8 @@
 {
 	"scripts" : {
 		"deploy" : "python deploy.py"
-	}
+	},
+	"devDependencies": {
+	    "node-webkit-screenshot": "^0.3.2"
+	  }
 }
