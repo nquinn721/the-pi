@@ -10,6 +10,9 @@
 <body>
 <?php include 'includes/nav.php';?>
 <div class="container">
+	<div class="jumbotron">
+		<h1>List of Sites</h1>
+	</div>
 	<?php
 	if(!$server)
 		include 'development.php';

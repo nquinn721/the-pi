@@ -1,8 +1,32 @@
 {
-	"scripts" : {
-		"deploy" : "python deploy.py"
-	},
-	"devDependencies": {
-	    "node-webkit-screenshot": "^0.3.2"
-	  }
+  "scripts": {
+    "deploy": "python deploy.py",
+    "updaterepos": "python updaterepos.py",
+    "updateall": "python deploy.py && python updaterepos.py"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.6",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.0.5",
+    "node-webkit-screenshot": "^0.3.2"
+  },
+  "name": "the-pi",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "description": "Showcase for web apps",
+  "dependencies": {
+    "gulp-less": "^3.0.5",
+    "node-webkit-screenshot": "^0.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nquinn721/the-pi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nquinn721/the-pi/issues"
+  },
+  "homepage": "http://collabkings.com"
 }
