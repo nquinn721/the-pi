@@ -29,7 +29,7 @@
 							<div class="title">
 								<h3>
 									<?php echo $entry;?>
-									<div class="small-text">Created by: <?php echo $json->get('name', 'Unknown')?></div>
+									<div class="small-text">Created by: <?php echo str_replace('-', ' ', $json->get('name', 'Unknown'))?></div>
 								</h3>
 							
 							</div>
