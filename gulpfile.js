@@ -13,11 +13,12 @@ var paths = {
 
 gulp.task('less', function () {
   return gulp.src(paths.less)
+  	.pipe(concat('main.less'))
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
-  	.pipe(cleanCSS({compatibility: 'ie8'}))
-  	.pipe(concat('main.css'))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(concat('main.css'))
     .pipe(gulp.dest('./public/css'));
 });
 

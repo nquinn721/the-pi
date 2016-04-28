@@ -1,20 +1,22 @@
 <?php
+class JsonIndividual {
+	private $json;
 
+	function __construct($json){
+		$this->json = $json;
+	}
+
+	function get($key, $default){
+		if(isset($this->json) && isset($this->json[$key]) && $this->json[$key] !== '')
+			return $this->json[$key];
+		return $default;
+	}
+}
 class Json {
-	private static $json;
-
 	public static function read($url){
 		$string = @file_get_contents($url);
 		$json = json_decode($string, true);
-		if(isset($json)){
-			self::$json = $json;
-			return @self;
-		}
+		return new JsonIndividual($json);
 	}
 
-	public static function get($key, $default){
-		if(isset(self::$json) && isset(self::$json[$key]))
-			return self::$json[$key];
-		return $default;
-	}
 }

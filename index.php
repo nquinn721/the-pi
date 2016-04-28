@@ -15,29 +15,34 @@
 		{{name.name}}
 	</div>
 	<?php
-	if(!$server)
-		include 'development.php';
-	else include 'production.php';
+		Dir::read('./repos', function($entry) {
 
-Dir::read('./repos', function($entry) {
+			if(strpos($entry, '.') === false):
+				$json = Json::read("repos/$entry/package.json");
+				?>
+				<div class='repo'>
+					<a href='repos/<?php echo $entry;?>'>
+						<div class="image-display">
+			 				<img class='img' src="img/repos/<?php echo $entry;?>.png" alt="">
+			 			</div>
+						<div clsas='details'>
+							<div class="title">
+								<h3>
+									<?php echo $entry;?>
+									<div class="small-text">Created by: <?php echo $json->get('name', 'Unknown')?></div>
+								</h3>
+							
+							</div>
+							<div class="description">
+								<?php echo $json->get('description', 'No description added');?>
+							</div>
+						</div>
+					</a>
+				</div>
 
-	if(strpos($entry, '.') === false):
-		$json = Json::read("repos/$entry/package.json");
-		$name = Json::get('name', 'Unknown');
-		?>
-		<div class='col-md-6 site-container repo-list' >
-			<a href='repos/<?php echo $entry;?>' class='site-link' >
-	 		<img class='img' src="img/repos/<?php echo $entry;?>.png" alt="">
-				<span>
-					<?php echo $entry;?>
-					<div class="small-text">Created by: <?php echo $name?></div>
-				</span>
-			</a>
-		</div>
-
-	<?php endif;
-});
-?>
+			<?php endif;
+		});
+	?>
 </div>
 <?php include 'includes/scripts.php';?>
 </body>

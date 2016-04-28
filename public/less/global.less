@@ -1,0 +1,10 @@
+.property_(@property, @value) {
+    _: ~"; @{property}:" @value;
+} 	   
+.pre(@property, @value) { 
+    .property_('-webkit-@{property}', @value);
+    .property_( '-o-@{property}', @value);
+    .property_( '-ms-@{property}', @value);
+    .property_(   '-moz-@{property}', @value);
+    .property_(          @property,   @value);
+}   
