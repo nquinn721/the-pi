@@ -2,11 +2,12 @@ var gulp = require('gulp'),
 	less = require('gulp-less'),
 	path = require('path'),
 	cleanCSS = require('gulp-clean-css'),
-	concat = require('gulp-concat');
+	concat = require('gulp-concat'),
+	uglify = require('gulp-uglify');
 
 var paths = {
 	less : './public/less/**/*.less',
-	js : './public/js/**/*.js'
+	js : './public/js/*.js, ./app/**/*.js'
 }
 
 
@@ -20,7 +21,15 @@ gulp.task('less', function () {
     .pipe(gulp.dest('./public/css'));
 });
 
+gulp.task('js', function () {
+  return gulp.src(paths.js.split(','))
+    .pipe(uglify())
+  	.pipe(concat('main.js'))
+    .pipe(gulp.dest('./public/js'));
+});
+
 
 gulp.task('watch', function() {
   gulp.watch(paths.less, ['less']);
+  gulp.watch(paths.js.split(','), ['js']);
 });
