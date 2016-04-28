@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 
 var paths = {
 	less : './public/less/**/*.less',
-	js : './public/js/*.js, ./app/**/*.js'
+	js : './app/**/*.js'
 }
 
 

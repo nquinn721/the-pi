@@ -1,6 +1,6 @@
 <?php include 'includes/globals.php'; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="collabKings">
 <head>
 	<meta charset="UTF-8">
 	<title>CollabKings</title>
@@ -9,9 +9,10 @@
 </head>
 <body>
 <?php include 'includes/nav.php';?>
-<div class="container">
+<div class="container" ng-controller="names as name">
 	<div class="jumbotron">
 		<h1>List of Sites</h1>
+		{{name.name}}
 	</div>
 	<?php
 	if(!$server)
