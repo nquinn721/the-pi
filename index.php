@@ -21,7 +21,7 @@
 				$json = Json::read("repos/$entry/package.json");
 				?>
 				<div class='repo'>
-					<a href='<?php if($json->get('app-type') === 'node'){ echo $_SERVER['HTTP_HOST'] . ':' . $json->get('port'); }else { echo 'repos/' . $entry;}?>'>
+					<a href='<?php if($json->get('app-type') === 'node'){ echo 'http://' . $_SERVER['HTTP_HOST'] . ':' . $json->get('port'); }else { echo 'repos/' . $entry;}?>'>
 						<div class="image-display">
 			 				<img class='img' src="img/repos/<?php echo $entry;?>.png" alt="">
 			 			</div>
