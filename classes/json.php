@@ -6,7 +6,7 @@ class JsonIndividual {
 		$this->json = $json;
 	}
 
-	function get($key, $default){
+	function get($key, $default = ''){
 		if(isset($this->json) && isset($this->json[$key]) && $this->json[$key] !== '')
 			return $this->json[$key];
 		return $default;
